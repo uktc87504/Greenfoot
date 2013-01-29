@@ -17,3 +17,6 @@ The actors are programmed in standard textual Java code, providing a combination
 #####Resources<br\>
  Greenfoot website: http://www.greenfoot.org/ | http://www.greenfoot.org/home<br\>
  Greenfoot source download link: http://www.greenfoot.org/site/download_source<br\>
+
+#####License
+ The Greenfoot copyright is held by Michael Kölling and Poul Henriksen, whilst the Greenfoot system is available under the GNU General Public Licence version 2 with the Classpath Exception.
