@@ -1,0 +1,78 @@
+Prerequisites:
+ build.properties in both the greenfoot and bluej source directories should be 
+ modified to match your configuration.
+
+
+Building Greenfoot:
+ 1. Update version number in build.xml and run "ant update-version-number".
+ 2. Test bundled scenarios and make sure they are upgraded to new API version.
+ 3. Run "ant ready-to-run" in the BlueJ directory.
+ 4. Run "ant dist" in the Greenfoot directory
+ 5. Build the windows installer (see below).
+ 6. Copy the builds and source to greenfoot.org.
+
+If necessary:
+ 7. If the API version has changed, copy Greenfoot-core-X.X.X-jar to the gallery: /home/mygame/mygame/public/sharedjars/
+ 8. If any of the 3rd party libraries have changed copy them to: /home/mygame/mygame/public/sharedjars/
+ 9. If the licenses have changed, update GREENFOOT_LICENSES and copy LICENSE.txt and/or THIRDPARTYLICENSE.txt to: www.greenfoot.org/about
+ 
+Finally:
+10. Commit any changed files (with updated version numbers etc) to the repository.
+ 
+
+Building the Windows installer:
+ 1. Copy the "greenfoot-dist-XXX.jar" to the bluej/package directory
+    as "greenfoot-dist.jar"
+ 2. Build the executable launcher (see bluej/package/winlaunch/BUILD.TXT).
+ 3. Copy the launcher as "gflaunch.exe" to bluej/package/winlaunch
+ 4. Update the Greenfoot version number in bluej/package/winlaunch/Greenfoot-README.TXT
+ 5. Update AppVerName and OutputBaseFilename in bluej/package/winsetup/greenfoot.iss
+ 6. Run the bluej/package/greenfoot-build.xml ant script's "windows-dist" target
+
+For the MSI Windows package:
+ 1. Copy the "greenfoot-dist-XXX.jar" to the bluej/package directory
+    as "greenfoot-dist.jar"
+ 2. Build the executable launcher (see bluej/package/winlaunch/BUILD.TXT).
+ 3. Copy the launcher as "gflaunch.exe" to bluej/package/winlaunch
+ 4. Update the Greenfoot version number in bluej/package/winlaunch/Greenfoot-README.TXT
+ 5. Update the Greenfoot version number in bluej/package/winsetup/greenfoot.wxs (in 2 places)
+ 6. Run the bluej/package/greenfoot-build.xml ant script's "windows-dist" target
+
+
+Subversion:
+ Create tag dir (not needed when using Eclipse):
+  svn+ssh://cvs.bluej.org/home/bluej/svnroot/tags/GREENFOOT_RELEASE_X_Y_Z
+ Tag BlueJ 
+  Don't forget bluej at the end of the path
+  from: svn+ssh://cvs.bluej.org/home/bluej/svnroot/trunk/bluej
+  to: svn+ssh://cvs.bluej.org/home/bluej/svnroot/tags/GREENFOOT_RELEASE_X_Y_Z/bluej
+ Tag Greenfoot 
+  Don't forget greenfoot at the end of the path
+  from: svn+ssh://cvs.bluej.org/home/bluej/svnroot/trunk/greenfoot
+  to: svn+ssh://cvs.bluej.org/home/bluej/svnroot/tags/GREENFOOT_RELEASE_X_Y_Z/greenfoot
+ 
+ 
+ 
+Trac: 
+ Create new version and new milestone version.
+ Check that all bugs for this milestone are closed or updated to a new milestone.
+ 
+ 
+Web-pages to update on www.greenfoot.org:
+ doc
+  move javadoc to doc/old
+  update javadoc with the generated doc from create-api-doc
+  update greenfoot-javadoc.zip
+  update Greenfoot API.pdf
+ index.html
+ download/old-downloads.html
+ download/install.html
+ download/index.html
+ download/source-download.html
+ news/200?/index.html
+ doc/version-history.html
+ scenarios/* (if greenfoot API change)
+ 
+ 
+Email:
+ send email to greenfoot-announce

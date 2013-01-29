@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 47
+*.html
+resources
+
+package-list
+
+stylesheet.css
+
+END
